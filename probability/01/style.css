@@ -8,6 +8,10 @@ header {
   text-align: center;
 }
 
+a {
+  color: grey;
+}
+
 main,
 .summary {
   display: flex;
