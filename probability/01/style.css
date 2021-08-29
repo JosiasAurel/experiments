@@ -89,7 +89,7 @@ main,
   flex-direction: column;
   justify-content: space-evenly;
   align-items: flex-start;
-  width: 40%;
+  margin: 0 10%;
 }
 
 .explanation h1 {
