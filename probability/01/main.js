@@ -15,6 +15,7 @@ const coin = $("coin-body");
 const outcomeValue = $("outcome");
 const prediction = $("prediction");
 const experiments__ = $("experiments");
+const getSummaryButton = $("download");
 
 /* 
     The outcome we generate has to be a value between 0 and 1 for a Tail or Head respectively
@@ -133,6 +134,17 @@ function predict() {
 
 }
 
+function downloadExperimentsSummary() {
+    const experimentsSummary = new Blob([JSON.stringify(allData)], { type: "application/json" });
+
+    const summaryURL = URL.createObjectURL(experimentsSummary);
+
+    // get download button
+    const downloadButton = $("download");
+    downloadButton.setAttribute("href", summaryURL);
+    downloadButton.setAttribute("download", "experiments-summary.json");
+}
+
 tossButton.addEventListener("click", _ => {
     const tossValue = tossCoin(); // toss the coin
     experiments__.innerText = `Experiments : ${experiments.length}`;
@@ -166,4 +178,8 @@ tossButton.addEventListener("click", _ => {
     };
 
     allData.push(unitData);
+});
+
+getSummaryButton.addEventListener("click", _ => {
+    downloadExperimentsSummary(); // pretty clear
 });
