@@ -1,0 +1,81 @@
+* {
+  box-sizing: border-box;
+  font-family: monospace;
+  transition: all 0.2s ease-in-out;
+}
+
+body {
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.head {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.head span {
+  margin: 0 1em;
+  font-size: 2em;
+}
+
+form {
+  margin: 2em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+form #controls {
+  margin: 2em 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+form input[type="number"] {
+  border: solid 2px black;
+  margin: 0 3em;
+  transform: scale(3);
+}
+
+form input[type="number"]:focus {
+  outline: none;
+}
+
+form button {
+  padding: 1em 2em;
+  border: solid transparent;
+  color: white;
+  background-color: black;
+}
+
+form button:active {
+  transform: scale(0.9);
+}
+
+#newGame {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  padding: 0.5em 1em;
+  border: solid transparent;
+  color: white;
+  background-color: black;
+}
+
+footer {
+  position: fixed;
+  bottom: 4px;
+  font-size: 2em;
+}
+
+a {
+  color: grey;
+}
