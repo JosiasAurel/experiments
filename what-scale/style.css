@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     font-family: sans-serif;
+    transition: all 0.2s ease-in-out;
 }
 
 main {
@@ -27,4 +28,16 @@ form input {
 
 form input:focus {
     outline: none;
+}
+
+form button {
+    border: solid transparent;
+    color: white;
+    background-color: blue;
+    border-radius: 5px;
+    padding: 0.4em 0.8em;
+}
+
+form button:active {
+    transform: scale(0.99);
 }

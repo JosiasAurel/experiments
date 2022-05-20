@@ -16,16 +16,16 @@ form.addEventListener("submit", event => {
     if (max.value && min.value && numSquares.value && subdivisions.value) {
         // initialize calculator
         sc.init({
-            max: parseInt(max.value),
-            min: parseInt(min.value),
-            numSquares: parseInt(numSquares.value),
-            subdivisions: parseInt(subdivisions.value)
+            max: parseFloat(max.value),
+            min: parseFloat(min.value),
+            numSquares: parseFloat(numSquares.value),
+            subdivisions: parseFloat(subdivisions.value)
         });
 
         // compute scale
         const scale = sc.computeScale();
-
-        alert(`Each square represents ${scale} unit(s). Each subdivision would then be`);
+        const subScale = sc.subScale;
+        alert(`Each square represents ${scale} unit(s). Each subdivision would then be ${subScale}`);
     } else alert("Woops you might have forgotten to fill in some value 🙄");
 
 

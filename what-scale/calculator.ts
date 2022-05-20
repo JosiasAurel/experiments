@@ -78,6 +78,10 @@ class ScaleCalculator {
         return value.toString().split(".")[1].length;
     }
 
+    get subScale() {
+        return this.subdividedScale;
+    }
+
 }
 
 export {

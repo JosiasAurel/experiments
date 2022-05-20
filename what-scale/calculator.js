@@ -1,20 +1,16 @@
-"use strict";
 /*
 This module implements an algorithm to try and find a good scale for plotting graphs manually.
 The algorithm is approached using the design of a finite state machine.
 */
-exports.__esModule = true;
-exports.ScaleCalculator = void 0;
-var ScaleCalculator = /** @class */ (function () {
-    function ScaleCalculator() {
+class ScaleCalculator {
+    constructor() {
         this.diff = 0;
         this.min = 0;
         this.max = 0;
         this.numSquares = 0;
         this.initialised = false;
     }
-    ScaleCalculator.prototype.init = function (_a) {
-        var max = _a.max, min = _a.min, numSquares = _a.numSquares, subdivisions = _a.subdivisions;
+    init({ max, min, numSquares, subdivisions }) {
         // set variables
         this.max = max;
         this.min = min;
@@ -24,8 +20,8 @@ var ScaleCalculator = /** @class */ (function () {
         this.initialised = true;
         // compute the diff
         this.diff = this.max - this.min;
-    };
-    ScaleCalculator.prototype.computeScale = function () {
+    }
+    computeScale() {
         if (this.initialised) {
             // do the job
             this.scale = this.diff / this.numSquares;
@@ -35,8 +31,8 @@ var ScaleCalculator = /** @class */ (function () {
         }
         else
             return;
-    };
-    ScaleCalculator.prototype.rescaleDecimals = function () {
+    }
+    rescaleDecimals() {
         if (Math.round(this.scale) > 0) {
             this.scale = Math.round(this.scale);
             return;
@@ -50,10 +46,12 @@ var ScaleCalculator = /** @class */ (function () {
             this.subdividedScale = this.scale / this.subdivisions;
             this.rescaleDecimals();
         }
-    };
-    ScaleCalculator.prototype.countDecimals = function (value) {
+    }
+    countDecimals(value) {
         return value.toString().split(".")[1].length;
-    };
-    return ScaleCalculator;
-}());
-exports.ScaleCalculator = ScaleCalculator;
+    }
+    get subScale() {
+        return this.subdividedScale;
+    }
+}
+export { ScaleCalculator };

@@ -1,25 +1,24 @@
-"use strict";
-exports.__esModule = true;
-var calculator_1 = require("./calculator");
-var form = document.getElementById("form");
-form.addEventListener("submit", function (event) {
+import { ScaleCalculator } from "./calculator.js";
+const form = document.getElementById("form");
+form.addEventListener("submit", event => {
     event.preventDefault(); // prevent browser from reloading
-    var max = document.getElementById("max");
-    var min = document.getElementById("min");
-    var numSquares = document.getElementById("numSquares");
-    var subdivisions = document.getElementById("subdivisions");
-    var sc = new calculator_1.ScaleCalculator();
+    const max = document.getElementById("max");
+    const min = document.getElementById("min");
+    const numSquares = document.getElementById("numSquares");
+    const subdivisions = document.getElementById("subdivisions");
+    const sc = new ScaleCalculator();
     if (max.value && min.value && numSquares.value && subdivisions.value) {
         // initialize calculator
         sc.init({
-            max: parseInt(max.value),
-            min: parseInt(min.value),
-            numSquares: parseInt(numSquares.value),
-            subdivisions: parseInt(subdivisions.value)
+            max: parseFloat(max.value),
+            min: parseFloat(min.value),
+            numSquares: parseFloat(numSquares.value),
+            subdivisions: parseFloat(subdivisions.value)
         });
         // compute scale
-        var scale = sc.computeScale();
-        alert("Each square represents " + scale + " unit(s). Each subdivision would then be");
+        const scale = sc.computeScale();
+        const subScale = sc.subScale;
+        alert(`Each square represents ${scale} unit(s). Each subdivision would then be ${subScale}`);
     }
     else
         alert("Woops you might have forgotten to fill in some value 🙄");
