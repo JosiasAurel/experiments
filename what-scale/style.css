@@ -51,3 +51,9 @@ form button:active {
     border-radius: 10px;
     max-width: 70%;
 }
+
+@media screen and (max-width: 500px) {
+    img {
+        max-width: 300px;
+    }
+}
