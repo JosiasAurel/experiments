@@ -41,3 +41,13 @@ form button {
 form button:active {
     transform: scale(0.99);
 }
+
+.content {
+    width: 80%;
+    text-align: center;
+}
+
+.content img {
+    border-radius: 10px;
+    max-width: 70%;
+}

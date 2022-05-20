@@ -12,7 +12,8 @@
 <body>
     <main>
         <h1>What Scale ?</h1>
-        
+
+        <p>A little tool to try and calculate a good scale for you.</p>
         <form id="form">
             <input placeholder="Enter the max value" type="text" name="Max Value" id="max">
             <input placeholder="Enter the min value" type="text" name="" id="min">
@@ -22,6 +23,27 @@
                 calculate
             </button>
         </form>
+
+        <h2>What More ?</h2>
+        <p class="content">
+            It happens that I spent the last minutes of my last evening reading about Automata theory 
+            and I was fascinated by the concept of finite state machines and how they appear in our every day life.
+            While doing some data analysis assignments and a correction from my brother. I came to realise 
+            there is so much repetition in trying to get a good scale for your graph.
+            You take the max - min value and divide by the number of squares. Then you repetitively, by trial and error try to find
+            that number that will make subdivisions better for plotting your values.
+
+            💥"What if I can build something to do this calculation for me." So I spent the next 1 hours experimenting and writing this
+            little app with the concept of <a href="https://en.wikipedia.org/wiki/Finite-state_machine">Finite State machines</a> I learned before going to bed the previous night.
+            
+            This app specifically implements a <em>Non-Deterministic finite automaton</em>. Below is the state diagram describing the states and transitions occuring underneath.
+            <img src="diagram.png" alt="diagram">
+            <p>Below follows my mathematical definition of the state machine.</p>
+            <img src="description.png" alt="diagram">
+        </p>
+        
+        <p>The code is entirely open source. View it <a href="https://github.com/JosiasAurel/experiments/tree/master/what-scale">here</a> </p>
+        <p>Built by <a href="https://josiasw.dev">Josias Aurel</a>. Have a nice day ;)</p>
     </main>
 </body>
 </html>
